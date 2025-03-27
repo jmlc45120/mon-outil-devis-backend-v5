@@ -39,4 +39,13 @@ export default class ClientsController {
     await client.delete()
     return response.noContent()
   }
+  async show({ params, response }: HttpContext) {
+    const client = await Client.find(params.id)
+  
+    if (!client) {
+      return response.notFound({ message: 'Client non trouvé' })
+    }
+  
+    return response.ok(client)
+  }
 }

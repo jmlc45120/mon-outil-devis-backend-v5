@@ -16,7 +16,8 @@ router.get('/', async () => {
   }
 })
 
-router.post('/clients', [ClientsController, 'store'])
-router.get('/clients', [ClientsController, 'index'])
-router.put('/clients/:id', [ClientsController, 'update'])
-router.delete('/clients/:id', [ClientsController, 'destroy'])
+router.post('/clients', [ClientsController, 'store']) // ajoute un client
+router.get('/clients', [ClientsController, 'index']) // liste tous les clients
+router.get('/clients/:id', [ClientsController, 'show']) // récupère un client
+router.put('/clients/:id', [ClientsController, 'update']) // modifie un client
+router.delete('/clients/:id', [ClientsController, 'destroy']) // supprime un client
