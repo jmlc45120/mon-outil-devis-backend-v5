@@ -11,4 +11,8 @@ export default class ClientsController {
 
     return response.created(client)
   }
+  async index({ response }: HttpContext) {
+    const clients = await Client.all()
+    return response.ok(clients)
+  }
 }

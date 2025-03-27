@@ -17,3 +17,4 @@ router.get('/', async () => {
 })
 
 router.post('/clients', [ClientsController, 'store'])
+router.get('/clients', [ClientsController, 'index'])
