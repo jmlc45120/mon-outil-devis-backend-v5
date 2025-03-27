@@ -18,3 +18,4 @@ router.get('/', async () => {
 
 router.post('/clients', [ClientsController, 'store'])
 router.get('/clients', [ClientsController, 'index'])
+router.put('/clients/:id', [ClientsController, 'update'])

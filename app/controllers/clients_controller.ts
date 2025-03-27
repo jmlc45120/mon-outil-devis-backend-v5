@@ -15,4 +15,18 @@ export default class ClientsController {
     const clients = await Client.all()
     return response.ok(clients)
   }
+  async update({ request, response, params }: HttpContext) {
+    const client = await Client.find(params.id)
+  
+    if (!client) {
+      return response.notFound({ message: 'Client non trouvé' })
+    }
+  
+    const data = request.only(['name', 'email', 'company_name', 'phone'])
+  
+    client.merge(data)
+    await client.save()
+  
+    return response.ok(client)
+  }
 }
