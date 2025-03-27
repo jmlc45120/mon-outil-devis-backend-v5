@@ -1,5 +1,6 @@
-import { BaseModel, column, belongsTo, BelongsTo } from '@adonisjs/lucid/orm'
+import { BaseModel, column, belongsTo, } from '@adonisjs/lucid/orm'
 import { DateTime } from 'luxon'
+import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import Client from '#models/client'
 
 export default class Quote extends BaseModel {
