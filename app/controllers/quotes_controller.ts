@@ -9,4 +9,9 @@ export default class QuotesController {
 
     return response.created(quote)
   }
+  async index({ response }: HttpContext) {
+    const quotes = await Quote.query().preload('client') // inclut le client lié
+
+    return response.ok(quotes)
+  }
 }
