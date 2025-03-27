@@ -26,3 +26,5 @@ router.delete('/clients/:id', [ClientsController, 'destroy']) // supprime un cli
 // DEVIS
 router.post('/quotes', [QuotesController, 'store'])
 router.get('/quotes', [QuotesController, 'index'])
+router.put('/quotes/:id', [QuotesController, 'update'])
+router.delete('/quotes/:id', [QuotesController, 'destroy'])
